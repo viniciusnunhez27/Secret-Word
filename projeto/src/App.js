@@ -64,9 +64,44 @@ function App() {
     SetGameStage (stages[1].name)
   }
 
-  const verifyLetter = () => {
-    SetGameStage(stages[2].name)
+  const verifyLetter = (letter) => {
+       const normalizedLetter = letter.toLowerCase()
+  
+   // check if letter has already been utilized
+
+   if ( guessedLetters.includes(normalizedLetter) || 
+        wrongLetters.includes(normalizedLetter)
+    ) {
+      return;
   }
+    
+  // push guessed letter or remove a guess
+   
+   if (letters.includes(normalizedLetter)){
+    SetGuessedLetters((actualGuessedLetters) => [
+    ...actualGuessedLetters,
+       normalizedLetter
+   ])}
+   else { 
+       setWrongLetters((actualWrongLetters) => [
+        ...actualWrongLetters,
+          normalizedLetter,
+       ]);
+
+       setGuesses((actualGuessedLetters) => actualGuessedLetters -1 )
+
+   }
+  };
+
+    useEffect (() => { 
+       if(guesses <= 0){
+
+        SetGameStage(stages[2].name)
+       }
+
+    }, [guesses]);
+ 
+
 
   const  retry = () => { 
      SetGameStage(stages[0].name)
