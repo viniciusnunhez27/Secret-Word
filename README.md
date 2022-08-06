@@ -33,7 +33,7 @@ Consulte **Implantação** para saber como implantar o projeto.
  
 
 ```
-$ git clone https://github.com/NOME_DO_USUARIO/NOME_REPOSITORIO
+$ git clone https://github.com/viniciusnunhez27/Secret-Word.git
 
 ```
 após clonar o repositório  executar no terminal do Vscode o comando.
