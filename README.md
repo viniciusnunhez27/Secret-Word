@@ -38,6 +38,13 @@ $ git clone https://github.com/viniciusnunhez27/Secret-Word.git
 ```
 após clonar o repositório  executar no terminal do Vscode o comando.
 
+Executart o comando.
+
+```
+npm install
+
+```
+
 ```
 npm start
 
